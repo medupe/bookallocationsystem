@@ -1,0 +1,64 @@
+@model  bookallocationsystem.Models.Learners.LearnerViewIndex
+@{
+    ViewData["Title"] = "Dashboard Page";
+}
+
+                   <div class="page-breadcrumb bg-white">
+                <div class="row align-items-center">
+                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                        <h4 class="page-title text-uppercase font-medium font-14">Learners</h4>
+                    </div>
+
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+
+              <div class="container-fluid">
+                <!-- ============================================================== -->
+                <!-- Start Page Content -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="white-box">
+                            <h3 class="box-title">Learner List</h3>
+                               <div class="float-right">
+                                   <button class="btn btn-success"     asp-action="Create" asp-controller="Learner"      >Add learner</button>
+                                         <a class="btn btn-primary"     asp-action="Upload" asp-controller="Book"      >Upload learner</a>
+                               </div>
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th class="border-top-0">#</th>
+                                            <th class="border-top-0">First Name</th>
+                                            <th class="border-top-0">Last Name</th>
+                                              <th class="border-top-0">Identity Number</th>
+                                            <th class="border-top-0">Grade</th>
+                                              <th class="border-top-0">Grade Class</th>
+                                       
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model.LearnerList)
+
+                            {
+                                                <tr>
+                                                        <td>1</td>
+                                                    <td>@item.FirstName</td>
+                                                        <td>@item.LastName</td>
+                                                    <td>@item.IdentityNumber</td>
+
+                                           
+                                                    <td>@item.Grade</td>
+                                                    <td>@item.GradeClass</td>
+                                                       </tr>
+                            }
+                                                                        </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ============================================================== -->
+
+            </div>
