@@ -22,10 +22,11 @@
                         <div class="white-box">
                             <h3 class="box-title">Basic Table</h3>
                                <div class="float-right">
-                                   <button class="btn btn-success"     asp-action="Create" asp-controller="Book"      >Add Book</button>
+                                   <a class="btn btn-success"     asp-action="Create" asp-controller="Book"      >Add Book</a>
                                          <a class="btn btn-primary"     asp-action="Upload" asp-controller="Book"      >Upload books</a>
                                </div>
                             <div class="table-responsive">
+
                                 <table class="table">
                                     <thead>
                                         <tr>
@@ -34,25 +35,34 @@
                                             <th class="border-top-0">Title</th>
                                             <th class="border-top-0">ISBN</th>
                                               <th class="border-top-0">Subject</th>
+                                                <th class="border-top-0">Condition</th>
                                                 <th class="border-top-0">Grade</th>
-                                                       <th class="border-top-0">Grade Class</th>
+                                                 <th class="border-top-0">Grade Class</th>
+                                              <th class="border-top-0">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach (var item in Model.BookList)
 
-                            {
-                                            <tr>
-                                                    <td>1</td>
-                                                <td>@item.Code</td>
-                                                    <td>@item.Title</td>
-                                                <td>@item.ISBN</td>
+                                        @{
+                                int c = 1;
+                                foreach (var item in Model.BookList)
 
-                                                <td>@item.Subject.Name</td>
-                                                <td>@item.Grade</td>
-                                                <td>@item.GradeClass</td>
-                                                   </tr>
-                            }
+                                {
+                                                            <tr>
+                                                                    <td>@c</td>
+                                                                <td>@item.Code</td>
+                                                                    <td>@item.Title</td>
+                                                                <td>@item.ISBN</td>
+
+                                                                <td>@item.Subject.Name</td>
+                                                                 <td>@item.Condition</td>
+                                                                <td>@item.Grade</td>
+                                                                <td>@item.GradeClass</td>
+                                                                <td> <a class="btn btn-link"     asp-action="Create" asp-controller="Allocate" asp-route-id="@item.Id"     >Allocate</a></td>
+                                                                   </tr>
+                                    c = c + 1;
+                                }
+                                        }
                                                                         </tbody>
                                 </table>
                             </div>

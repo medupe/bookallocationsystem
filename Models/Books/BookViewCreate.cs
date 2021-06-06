@@ -24,7 +24,8 @@ namespace bookallocationsystem.Models.Books
         public int SubjectId { get; set; }
         [BindProperty]
         public int SchoolId { get; set; }
-
+      [BindProperty]
+        public string  Condition { get; set; }
 
         public IEnumerable<School> SchoolList { get; set; }
         public IEnumerable<Subject> SubjectList { get; set; }

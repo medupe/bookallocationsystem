@@ -7681,11 +7681,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Development\\personal\\bookallocationsystem\\bookallocationsystem.csproj",
+      "projectUniqueName": "c:\\Development\\personal\\bookallocationsystem\\bookallocationsystem.csproj",
       "projectName": "bookallocationsystem",
-      "projectPath": "C:\\Development\\personal\\bookallocationsystem\\bookallocationsystem.csproj",
+      "projectPath": "c:\\Development\\personal\\bookallocationsystem\\bookallocationsystem.csproj",
       "packagesPath": "C:\\Users\\molepom\\.nuget\\packages\\",
-      "outputPath": "C:\\Development\\personal\\bookallocationsystem\\obj\\",
+      "outputPath": "c:\\Development\\personal\\bookallocationsystem\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\molepom\\AppData\\Roaming\\NuGet\\NuGet.Config"

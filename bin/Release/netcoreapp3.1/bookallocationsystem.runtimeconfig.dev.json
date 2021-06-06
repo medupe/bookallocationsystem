@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\molepom\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\molepom\\.nuget\\packages"
+    ]
+  }
+}

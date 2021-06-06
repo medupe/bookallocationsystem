@@ -11,7 +11,7 @@ namespace bookallocationsystem.Data.Books
     {
         Task<List<Book>> BookList();
         List<Subject> SubjectList();
-        Book FindBookWithId(int id);
+        Task<Book> FindBookWithId(int id);
         void UpdateSchool(Book book);
         Task AddBook(BookViewCreate bookCreate, string email);
         void DeleteSchool(int id);

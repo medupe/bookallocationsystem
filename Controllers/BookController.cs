@@ -111,10 +111,10 @@ namespace bookallocationsystem.Controllers
                 DataTable dataTable = workSheet.RangeUsed().AsTable().AsNativeDataTable();
                 await _bookRepository.BulkUploadBooks(dataTable, User.Identity.Name.ToString());
                 _bookRepository.SaveChanges();
-
+          
             }
 
-            return View();
+               return RedirectToAction("Index", "Book");
 
 
         }

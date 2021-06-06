@@ -78,12 +78,16 @@ C:\Development\personal\bookallocationsystem\obj\Debug\netcoreapp3.1\bookallocat
 C:\Development\personal\bookallocationsystem\obj\Debug\netcoreapp3.1\Razor\Views\Account\Index.cshtml.g.cs
 C:\Development\personal\bookallocationsystem\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
 C:\Development\personal\bookallocationsystem\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
+C:\Development\personal\bookallocationsystem\obj\Debug\netcoreapp3.1\Razor\Views\Allocate\Create.cshtml.g.cs
+C:\Development\personal\bookallocationsystem\obj\Debug\netcoreapp3.1\Razor\Views\Allocate\Index.cshtml.g.cs
 C:\Development\personal\bookallocationsystem\obj\Debug\netcoreapp3.1\Razor\Views\Book\Create.cshtml.g.cs
 C:\Development\personal\bookallocationsystem\obj\Debug\netcoreapp3.1\Razor\Views\Book\Index.cshtml.g.cs
 C:\Development\personal\bookallocationsystem\obj\Debug\netcoreapp3.1\Razor\Views\Book\Upload.cshtml.g.cs
 C:\Development\personal\bookallocationsystem\obj\Debug\netcoreapp3.1\Razor\Views\Dashboard\Index.cshtml.g.cs
 C:\Development\personal\bookallocationsystem\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 C:\Development\personal\bookallocationsystem\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
+C:\Development\personal\bookallocationsystem\obj\Debug\netcoreapp3.1\Razor\Views\Learner\Create.cshtml.g.cs
+C:\Development\personal\bookallocationsystem\obj\Debug\netcoreapp3.1\Razor\Views\Learner\Index.cshtml.g.cs
 C:\Development\personal\bookallocationsystem\obj\Debug\netcoreapp3.1\Razor\Views\School\Create.cshtml.g.cs
 C:\Development\personal\bookallocationsystem\obj\Debug\netcoreapp3.1\Razor\Views\School\Index.cshtml.g.cs
 C:\Development\personal\bookallocationsystem\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
@@ -100,5 +104,4 @@ C:\Development\personal\bookallocationsystem\obj\Debug\netcoreapp3.1\staticwebas
 C:\Development\personal\bookallocationsystem\obj\Debug\netcoreapp3.1\bookallocationsystem.dll
 C:\Development\personal\bookallocationsystem\obj\Debug\netcoreapp3.1\bookallocationsystem.pdb
 C:\Development\personal\bookallocationsystem\obj\Debug\netcoreapp3.1\bookallocationsystem.genruntimeconfig.cache
-C:\Development\personal\bookallocationsystem\obj\Debug\netcoreapp3.1\Razor\Views\Learner\Create.cshtml.g.cs
-C:\Development\personal\bookallocationsystem\obj\Debug\netcoreapp3.1\Razor\Views\Learner\Index.cshtml.g.cs
+C:\Development\personal\bookallocationsystem\obj\Debug\netcoreapp3.1\Razor\Views\Audit\Create.cshtml.g.cs

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "HaC00cnFg3ocT5sNShRpurHy0kDuKAHeR7r1a5KK1n2lnmGUZedJFEGbea5kEuEKs1/i+nRC6+KWul0H4zQR5g==",
+  "dgSpecHash": "+S9FNA3SB1VUU3kbpu03+2Fq8nqLxLRDt8kW/V8hf2WPRNaEqbqIGEy/+tHNaNQAgxd2nOnRg15i3wMj+GzTCA==",
   "success": true,
-  "projectFilePath": "C:\\Development\\personal\\bookallocationsystem\\bookallocationsystem.csproj",
+  "projectFilePath": "c:\\Development\\personal\\bookallocationsystem\\bookallocationsystem.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\molepom\\.nuget\\packages\\closedxml\\0.95.4\\closedxml.0.95.4.nupkg.sha512",
     "C:\\Users\\molepom\\.nuget\\packages\\documentformat.openxml\\2.7.2\\documentformat.openxml.2.7.2.nupkg.sha512",

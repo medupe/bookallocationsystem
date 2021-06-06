@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using bookallocationsystem.Data.Allocation;
 using bookallocationsystem.Data.Books;
 using bookallocationsystem.Data.Learners;
 using bookallocationsystem.Data.Schools;
@@ -34,6 +35,7 @@ namespace bookallocationsystem
             services.AddScoped<ISchoolRepository, SchoolRepository>();
             services.AddScoped<IBookRepository, BookRepository>();
             services.AddScoped<ILearnerRepository, LearnerRepository>();
+            services.AddScoped<IAllocateRepository, AllocateRepository>();
             services.AddIdentity<AppUser, AppRole>(options =>
             {
                 options.User.RequireUniqueEmail = true;

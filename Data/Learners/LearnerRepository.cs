@@ -30,7 +30,7 @@ namespace bookallocationsystem.Data.Learners
 
             _learner.Grade = LearnerCreate.Grade;
             _learner.GradeClass = LearnerCreate.GradeClass;
-            _learner.IdentityNumber = _learner.IdentityNumber;
+            _learner.IdentityNumber = LearnerCreate.IdentityNumber;
             _learner.school = _school;
 
             _learner.AddedBy = userInformation;

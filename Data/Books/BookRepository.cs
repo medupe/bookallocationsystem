@@ -32,7 +32,7 @@ namespace bookallocationsystem.Data.Books
             Book _book = new Book();
             _book.Title = bookCreate.Title;
             _book.Code = bookCreate.Code;
-
+            _book.Condition = bookCreate.Condition;
             _book.Grade = bookCreate.Grade;
             _book.GradeClass = bookCreate.GradeClass;
             _book.ISBN = bookCreate.ISBN;
@@ -43,23 +43,25 @@ namespace bookallocationsystem.Data.Books
             await _db.AddAsync(_book);
 
         }
-        public async Task BulkUploadBooks(DataTable dataTable,string email)
+        public async Task BulkUploadBooks(DataTable dataTable, string email)
         {
-                List<Book> _book= new List<Book>();
-                  foreach (DataRow item in dataTable.Rows)
+            List<Book> _book = new List<Book>();
+            foreach (DataRow item in dataTable.Rows)
+            {
+                _book.Add(new Book
                 {
-                   _book.Add(new Book{
-                      Code=item[0].ToString(),
-                      Title=item[1].ToString(),
-                      ISBN=item[2].ToString(),
-                      Grade=item[3].ToString(),
-                      GradeClass=item[4].ToString(),
-                      AddedBy= await _userManager.FindByNameAsync(email),
-                      Subject=await FindSubjectByName(item[5].ToString()),
-                      School= await _db.School.FindAsync(1),
-               
-                   });
-                }
+                    Code = item[0].ToString(),
+                    Title = item[1].ToString(),
+                    ISBN = item[2].ToString(),
+                    Grade = item[3].ToString(),
+                    GradeClass = item[4].ToString(),
+
+                    AddedBy = await _userManager.FindByNameAsync(email),
+                    Subject = await FindSubjectByName(item[5].ToString()),
+                    School = await _db.School.FindAsync(1),
+                    Condition = item[6].ToString(),
+                });
+            }
             await _db.AddRangeAsync(_book);
         }
 
@@ -76,9 +78,9 @@ namespace bookallocationsystem.Data.Books
             throw new System.NotImplementedException();
         }
 
-        public Book FindBookWithId(int id)
+        public async Task<Book> FindBookWithId(int id)
         {
-            throw new System.NotImplementedException();
+            return await _db.Book.FindAsync(id);
         }
 
         public int SaveChanges()
@@ -101,6 +103,6 @@ namespace bookallocationsystem.Data.Books
             return await _db.Subject.FirstOrDefaultAsync(x => x.Name == subjectName);
         }
 
-    
+
     }
 }

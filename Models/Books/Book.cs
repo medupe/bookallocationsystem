@@ -27,6 +27,8 @@ namespace bookallocationsystem.Models.Books
         public Subject Subject { get; set; }
         [Required]
         public School School { get; set; }
+        [Required]
+        public string Condition { get; set; }
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public DateTime AddedTime { get; set; } = DateTime.Now;
 

@@ -1,0 +1,84 @@
+  @model bookallocationsystem.Models.Audits.AuditViewCreate
+@{
+    ViewData["Title"] = "Audit Page";
+}
+
+
+
+          <div class="page-breadcrumb bg-white">
+                <div class="row align-items-center">
+                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                        <h4 class="page-title text-uppercase font-medium font-14">Audit Book</h4>
+                    </div>
+
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+
+              <div class="container-fluid">
+                     <div class="col-lg-12 col-xlg-9 col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+
+                                <form class="form-horizontal form-material"  method="POST"  asp-action="Create" asp-controller="Audit">
+                                    <div class="form-group mb-4">
+                                        <label class="col-md-12 p-0">Book Name</label>
+                                        <div class="col-md-12 border-bottom p-0">
+                                            <input type="text" disabled value="@Model.allocation.Learner.FirstName"  placeholder="Book Name"
+                                                class="form-control p-0 border-0">
+
+
+                                                 </div>
+
+
+                                    </div>
+                                       <div class="form-group mb-4">
+                                        <label class="col-md-12 p-0">Learner Name</label>
+                                        <div class="col-md-12 border-bottom p-0">
+                                            <input type="text" disabled value="@Model.allocation."  placeholder="Book Name"
+                                                class="form-control p-0 border-0">
+
+
+                                                 </div>
+
+
+                                    </div>
+
+
+                                    <div class="form-group mb-4">
+                                        <label class="col-sm-12">Condtion</label>
+                                        <div class="col-md-12 border-bottom p-0">
+                                                 <select class="form-control p-0 border-0"  asp-for="AuditCondition">
+                                                <option value="Excellent">Excellent</option>
+                                                <option value="Good" >Good</option>
+                                                <option value="Medium">Medium</option>
+                                                <option value="Bad">Bad</option>
+                                                <option value="Lost">Lost</option>
+                                            </select>
+                                               <span>@Html.ValidationMessageFor(x => x.AuditCondition)</span>
+                                    </div>
+   <div class="form-group mb-4">
+                                        <label class="col-sm-12">Audit Quater</label>
+                                        <div class="col-md-12 border-bottom p-0">
+                                                 <select class="form-control p-0 border-0"  asp-for="AuditQuater">
+                                                <option value="Excellent">Q1</option>
+                                                <option value="Good" >Q2</option>
+                                                <option value="Medium">Q3</option>
+                                                <option value="Bad">Q4</option>
+
+                                            </select>
+                                               <span>@Html.ValidationMessageFor(x => x.AuditCondition)</span>
+                                    </div>
+
+
+
+                                    <div class="form-group mb-4">
+                                        <div class="col-sm-12">
+                                            <button class="btn btn-success">Audit</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                  </div>

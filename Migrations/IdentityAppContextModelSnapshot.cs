@@ -271,6 +271,90 @@ namespace bookallocationsystem.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("bookallocationsystem.Models.Allocation.Allocate", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<int?>("AddedById")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("AddedTime")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("AllocationCondition")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("BookId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("LearnerId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("Returned")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("ReturnedCondition")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("ReturnedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("SchoolId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("returnedById")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AddedById");
+
+                    b.HasIndex("BookId");
+
+                    b.HasIndex("LearnerId");
+
+                    b.HasIndex("SchoolId");
+
+                    b.HasIndex("returnedById");
+
+                    b.ToTable("Allocate");
+                });
+
+            modelBuilder.Entity("bookallocationsystem.Models.Audits.Audit", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<int?>("AllocateId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("AuditById")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("AuditDate")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("AuditQuater")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AllocateId");
+
+                    b.HasIndex("AuditById");
+
+                    b.ToTable("Audit");
+                });
+
             modelBuilder.Entity("bookallocationsystem.Models.Books.Book", b =>
                 {
                     b.Property<int>("Id")
@@ -286,6 +370,10 @@ namespace bookallocationsystem.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Code")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Condition")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -438,6 +526,54 @@ namespace bookallocationsystem.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("bookallocationsystem.Models.Allocation.Allocate", b =>
+                {
+                    b.HasOne("Bookallocationsystem.Models.AppUsers.AppUser", "AddedBy")
+                        .WithMany()
+                        .HasForeignKey("AddedById");
+
+                    b.HasOne("bookallocationsystem.Models.Books.Book", "Book")
+                        .WithMany()
+                        .HasForeignKey("BookId");
+
+                    b.HasOne("bookallocationsystem.Models.Learners.Learner", "Learner")
+                        .WithMany()
+                        .HasForeignKey("LearnerId");
+
+                    b.HasOne("Bookallocationsystem.Models.Schools.School", "School")
+                        .WithMany()
+                        .HasForeignKey("SchoolId");
+
+                    b.HasOne("Bookallocationsystem.Models.AppUsers.AppUser", "returnedBy")
+                        .WithMany()
+                        .HasForeignKey("returnedById");
+
+                    b.Navigation("AddedBy");
+
+                    b.Navigation("Book");
+
+                    b.Navigation("Learner");
+
+                    b.Navigation("returnedBy");
+
+                    b.Navigation("School");
+                });
+
+            modelBuilder.Entity("bookallocationsystem.Models.Audits.Audit", b =>
+                {
+                    b.HasOne("bookallocationsystem.Models.Allocation.Allocate", "Allocate")
+                        .WithMany()
+                        .HasForeignKey("AllocateId");
+
+                    b.HasOne("Bookallocationsystem.Models.AppUsers.AppUser", "AuditBy")
+                        .WithMany()
+                        .HasForeignKey("AuditById");
+
+                    b.Navigation("Allocate");
+
+                    b.Navigation("AuditBy");
                 });
 
             modelBuilder.Entity("bookallocationsystem.Models.Books.Book", b =>

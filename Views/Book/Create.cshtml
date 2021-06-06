@@ -17,7 +17,7 @@
                         <div class="card">
                             <div class="card-body">
 
-                                   <form  asp-action="Create" asp-controller="Book" method="POST">
+                                   <form class="form-horizontal form-material" asp-action="Create" asp-controller="Book" method="POST">
                                            <div asp-validation-summary="All" class="text-danger"></div>
                                     <div class="form-group mb-4">
                                         <label class="col-md-12 p-0">Code</label>
@@ -69,15 +69,29 @@
                                                 <option value="10">Grade 10</option>
                                                 <option value="11">Grade 11</option>
                                                 <option value="12">Grade 12</option>
-                                              
+
                                             </select>
                                                            </div>
-                                                  
+
+                                                                <div class="error invalid-feedback">@Html.ValidationMessageFor(x => x.Grade)</div>
+                                    </div>
+                                         <div class="form-group mb-4">
+                                        <label class="col-md-12 p-0">Enter Condition</label>
+                                        <div class="col-md-12 border-bottom p-0">
+                                                 <select class="form-control p-0 border-0"  asp-for="Condition">
+                                                <option value="Excellent">Excellent</option>
+                                                <option value="Good" >Good</option>
+                                                <option value="Medium">Medium</option>
+                                                <option value="Bad">Bad</option>
+                                                <option value="Lost">Lost</option>
+                                            </select>
+                                                           </div>
+
                                                                 <div class="error invalid-feedback">@Html.ValidationMessageFor(x => x.Grade)</div>
                                     </div>
 
 
-                                    
+
 
 
 
